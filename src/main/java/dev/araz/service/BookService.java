@@ -1,15 +1,15 @@
 package dev.araz.service;
 
-import dev.araz.entity.Book;
+import dev.araz.dto.BookDto;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
 @Service
 public interface BookService {
 
-    Flux<Book> getBooks();
+    Flux<BookDto> getBooks();
 
-    Flux<Book> getFreeBooks();
+    Flux<BookDto> getFreeBooks();
 
-    Flux<Book> search(String name, String author, String publisher, String yearEdition, String translator, String description);
+    Flux<BookDto> search(String name, String author, String publisher, String yearEdition, String translator, String description);
 }

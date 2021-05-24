@@ -7,5 +7,10 @@ import reactor.core.publisher.Flux;
 
 public interface BookRepository extends ReactiveCrudRepository<Book, Long> {
     @Query("SELECT * FROM book where busy = :busy")
-    Flux<Book> findByBusy(boolean busy);
+    Flux<Book> findBooksByBusy(boolean busy);
+
+    default Flux<Book> search(String query) {
+
+        return Flux.empty();
+    }
 }
